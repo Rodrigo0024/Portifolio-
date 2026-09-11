@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGate - Sistema Embarcado IoT | [INSIRA O NOME]</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "▪ ";
+            color: var(--accent);
+        }
+
+        /* Responsividade para o Vídeo do YouTube */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: var(--card-bg);
+            margin-top: 1rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-link">← Voltar para o Portfólio</a>
+
+        <header>
+            <h1>SmartGate: Sistema Embarcado IoT</h1>
+            <p class="tagline">Controle de Acesso Inteligente com STM32 e Firmware em C (Baremetal/HAL)</p>
+        </header>
+
+        <!-- Visão Geral -->
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>
+                O <strong>SmartGate</strong> é um projeto de hardware e software embarcado desenvolvido para gerenciar o controle de acesso automatizado de portões e catracas industriais ou residenciais. O sistema integra leitura de cartões RFID, autenticação biométrica local e conectividade sem fio para monitoramento remoto em tempo real.
+            </p>
+            <p>
+                Todo o projeto de circuito impresso (PCB) foi desenhado focando em alta imunidade a ruídos elétricos comuns em ambientes industriais, utilizando microcontroladores baseados na arquitetura ARM Cortex-M.
+            </p>
+        </section>
+
+        <!-- Vídeo Demonstrativo -->
+        <section>
+            <h2>Demonstração em Vídeo(Video aleatorio )</h2>
+            <p>Assista abaixo ao funcionamento do protótipo em bancada testando o acionamento do motor de passo e a leitura de tags:</p>
+            <div class="video-container">
+                <!-- Exemplo de incorporação de vídeo do YouTube -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7tevw1IRc88?si=rNGV8BQJh62edVGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Tecnologias e Funcionalidades -->
+        <section>
+            <h2>Principais Características</h2>
+            <div class="card">
+                <ul>
+                    <li>Firmware desenvolvido nativamente em Linguagem C utilizando bibliotecas HAL e rotinas otimizadas em Baremetal.</li>
+                    <li>Placa de circuito impresso (PCB) desenvolvida no KiCad com isolamento galvânico nas entradas de relé.</li>
+                    <li>Gerenciamento de filas e interrupções de hardware para leitura de teclado matricial e display OLED I2C.</li>
+                    <li>Watchdog Timer (WDT) configurado para resgate automático de falhas em caso de travamento do sistema.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Links e Repositório -->
+        <section>
+            <h2>Código e Documentação</h2>
+            <p>O código-fonte completo, diagramas esquemáticos e arquivos Gerber da placa estão disponíveis no repositório oficial:</p>
+            <div class="contact-links">
+                <a href="https://github.com" target="_blank" class="btn">Acessar Repositório no GitHub</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Desenvolvido por [INSIRA O NOME].</p>
+        </footer>
+    </div>
+
+</body>
+</html>
