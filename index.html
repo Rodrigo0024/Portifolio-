@@ -37,6 +37,32 @@
             margin-bottom: 3rem;
             border-bottom: 1px solid var(--border);
             padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-container {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .header-content {
+            flex-grow: 1;
         }
 
         h1 {
@@ -55,6 +81,13 @@
         .location {
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         section {
@@ -160,9 +193,15 @@
     <div class="container">
         <!-- Cabeçalho -->
         <header>
-            <h1>[INSIRA O NOME]</h1>
-            <p class="tagline">Engenheiro Eletricista | Pós-graduado em Eng. Automotiva | Projetista Eletrônico & P&D</p>
-            <p class="location">📍 [INSIRA A LOCALIDADE]</p>
+            <div class="profile-container">
+                <!-- Substitua o 'src' pela URL da sua foto ou caminho local -->
+                <img src="caminho-para-sua-foto.jpg" alt="Foto de Perfil" class="profile-pic" onerror="this.style.display='none'">
+            </div>
+            <div class="header-content">
+                <h1>[INSIRA O NOME]</h1>
+                <p class="tagline">Engenheiro Eletricista | Pós-graduado em Eng. Automotiva | Projetista Eletrônico & P&D</p>
+                <p class="location">📍 [INSIRA A LOCALIDADE]</p>
+            </div>
         </header>
 
         <!-- Sobre Mim -->
