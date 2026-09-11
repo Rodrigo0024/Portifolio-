@@ -154,6 +154,34 @@
             color: var(--accent);
         }
 
+        .hidden-items {
+            display: none;
+        }
+
+        .hidden-items.show {
+            display: block;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         .contact-links {
             display: flex;
             gap: 1rem;
@@ -194,7 +222,6 @@
         <!-- Cabeçalho -->
         <header>
             <div class="profile-container">
-                <!-- Substitua o 'src' pela URL da sua foto ou caminho local -->
                 <img src="perfil.png" alt="Foto de Perfil" class="profile-pic">
             </div>
             <div class="header-content">
@@ -222,17 +249,21 @@
                 <p>Atuação em P&D com foco em desenvolvimento de software embarcado em linguagem C para microcontroladores, elaboração de diagramas eletrônicos (circuitos analógicos e digitais) e criação de layout de PCBs.</p>
             </div>
 
-            <div class="card">
-                <h3>Estágio em Eletrônica</h3>
-                <span class="period">[INSIRA A EMPRESA]</span>
-                <p>Responsável pela montagem e testes de protótipos eletrônicos. Familiarização com ferramentas de programação e projeto como STM32CubeIDE, STVisual Develop, STM32CubeProgramer e KiCad.</p>
+            <div id="exp-mais" class="hidden-items">
+                <div class="card">
+                    <h3>Estágio em Eletrônica</h3>
+                    <span class="period">[INSIRA A EMPRESA]</span>
+                    <p>Responsável pela montagem e testes de protótipos eletrônicos. Familiarização com ferramentas de programação e projeto como STM32CubeIDE, STVisual Develop, STM32CubeProgramer e KiCad.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Trajetória Técnica e Diagnóstico Automotivo</h3>
+                    <span class="period">Desde 2010</span>
+                    <p>Início na mecânica aos 15 anos pela instituição de ensino técnica. Participação destacada em olimpíadas do conhecimento na modalidade de mecânica de automóveis. Ampla bagagem em diagnóstico avançado (ABS, injeção eletrônica, sistemas de carga/partida, transmissão e redes).</p>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Trajetória Técnica e Diagnóstico Automotivo</h3>
-                <span class="period">Desde 2010</span>
-                <p>Início na mecânica aos 15 anos pela instituição de ensino técnica. Participação destacada em olimpíadas do conhecimento na modalidade de mecânica de automóveis. Ampla bagagem em diagnóstico avançado (ABS, injeção eletrônica, sistemas de carga/partida, transmissão e redes).</p>
-            </div>
+            <button class="toggle-btn" onclick="toggleSection('exp-mais', this)">Ver mais experiências ↓</button>
         </section>
 
         <!-- Principais Projetos -->
@@ -248,14 +279,18 @@
                 </div>
             </div>
 
-            <div class="card">
-                <h3>Nome do Projeto 2</h3>
-                <span class="period">Tecnologias: Altium Designer, Firmware</span>
-                <p>Breve descrição do segundo projeto de destaque, focando na aplicação prática de hardware ou software desenvolvida por você.</p>
-                <div class="contact-links" style="margin-top: 1rem;">
-                    <a href="#" target="_blank" class="btn">Ver Código / Repositório</a>
+            <div id="proj-mais" class="hidden-items">
+                <div class="card">
+                    <h3>Nome do Projeto 2</h3>
+                    <span class="period">Tecnologias: Altium Designer, Firmware</span>
+                    <p>Breve descrição do segundo projeto de destaque, focando na aplicação prática de hardware ou software desenvolvida por você.</p>
+                    <div class="contact-links" style="margin-top: 1rem;">
+                        <a href="#" target="_blank" class="btn">Ver Código / Repositório</a>
+                    </div>
                 </div>
             </div>
+
+            <button class="toggle-btn" onclick="toggleSection('proj-mais', this)">Ver mais projetos ↓</button>
         </section>
 
         <!-- Competências -->
@@ -268,23 +303,31 @@
                         <li>Engenharia</li>
                         <li>Engenharia Elétrica</li>
                         <li>Engenharia Automotiva</li>
+                    </ul>
+                    <ul id="skill-setor-mais" class="hidden-items" style="margin-top: 0.3rem;">
                         <li>Engenharia de Projetos</li>
                         <li>Desenvolvimento Organizacional</li>
                         <li>Conserto Automotivo</li>
                         <li>Mecânica</li>
                     </ul>
+                    <button class="toggle-btn" onclick="toggleSection('skill-setor-mais', this)">Ver mais ↓</button>
                 </div>
+
                 <div class="card skill-category">
                     <h3>Ferramentas e tecnologias</h3>
                     <ul>
                         <li>Firmware</li>
                         <li>Microcontroladores</li>
                         <li>STM32</li>
+                    </ul>
+                    <ul id="skill-tech-mais" class="hidden-items" style="margin-top: 0.3rem;">
                         <li>C (Linguagem de Programação)</li>
                         <li>Desenvolvimento de Software</li>
                         <li>Depuração</li>
                     </ul>
+                    <button class="toggle-btn" onclick="toggleSection('skill-tech-mais', this)">Ver mais ↓</button>
                 </div>
+
                 <div class="card skill-category">
                     <h3>Competências interpessoais</h3>
                     <ul>
@@ -302,10 +345,15 @@
                 <h3>Pós-graduação em Engenharia Automotiva</h3>
                 <span class="period">[INSIRA A INSTITUIÇÃO] (Concluído)</span>
             </div>
-            <div class="card">
-                <h3>Graduação em Engenharia Elétrica</h3>
-                <span class="period">[INSIRA A INSTITUIÇÃO]</span>
+            
+            <div id="form-mais" class="hidden-items">
+                <div class="card">
+                    <h3>Graduação em Engenharia Elétrica</h3>
+                    <span class="period">[INSIRA A INSTITUIÇÃO]</span>
+                </div>
             </div>
+
+            <button class="toggle-btn" onclick="toggleSection('form-mais', this)">Ver mais formações ↓</button>
         </section>
 
         <!-- Licenças e Certificados -->
@@ -322,35 +370,39 @@
                 <span class="period">WRKits | Emitida em jan de 2025</span>
             </div>
 
-            <div class="card">
-                <h3>Curso Projeto de PCB com Altium Designer</h3>
-                <span class="period">Udemy | Emitida em jul de 2025</span>
+            <div id="cert-mais" class="hidden-items">
+                <div class="card">
+                    <h3>Curso Projeto de PCB com Altium Designer</h3>
+                    <span class="period">Udemy | Emitida em jul de 2025</span>
+                </div>
+
+                <div class="card">
+                    <h3>Curso Projeto de PCB com KiCad 8</h3>
+                    <span class="period">Udemy | Emitida em set de 2024</span>
+                </div>
+
+                <div class="card">
+                    <h3>Competidor - Olimpíada do Conhecimento</h3>
+                    <span class="period">Instituição de Ensino Técnica | Emitida em set de 2013</span>
+                </div>
+
+                <div class="card">
+                    <h3>Curso Mecânico de Injeção Eletrônica</h3>
+                    <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2012</span>
+                </div>
+
+                <div class="card">
+                    <h3>Curso Mecânico Automobilístico</h3>
+                    <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2011</span>
+                </div>
+
+                <div class="card">
+                    <h3>Curso Operador de Computador</h3>
+                    <span class="period">[INSIRA A EMPRESA] | Emitida em ago de 2010</span>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Curso Projeto de PCB com KiCad 8</h3>
-                <span class="period">Udemy | Emitida em set de 2024</span>
-            </div>
-
-            <div class="card">
-                <h3>Competidor - Olimpíada do Conhecimento</h3>
-                <span class="period">Instituição de Ensino Técnica | Emitida em set de 2013</span>
-            </div>
-
-            <div class="card">
-                <h3>Curso Mecânico de Injeção Eletrônica</h3>
-                <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2012</span>
-            </div>
-
-            <div class="card">
-                <h3>Curso Mecânico Automobilístico</h3>
-                <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2011</span>
-            </div>
-
-            <div class="card">
-                <h3>Curso Operador de Computador</h3>
-                <span class="period">[INSIRA A EMPRESA] | Emitida em ago de 2010</span>
-            </div>
+            <button class="toggle-btn" onclick="toggleSection('cert-mais', this)">Ver mais certificados ↓</button>
         </section>
 
         <!-- Contato -->
@@ -359,7 +411,7 @@
             <p>Interessado em trocar ideias sobre engenharia, sistemas embarcados ou tecnologia? Entre em contato:</p>
             <div class="contact-links">
                 <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
-                <a href="24tomokocurso@gmail.com" class="btn">E-mail</a>
+                <a href="mailto:contato@email.com" class="btn">E-mail</a>
             </div>
         </section>
 
@@ -369,5 +421,17 @@
         </footer>
     </div>
 
+    <script>
+        function toggleSection(id, btn) {
+            const element = document.getElementById(id);
+            element.classList.toggle('show');
+            
+            if (element.classList.contains('show')) {
+                btn.textContent = btn.textContent.replace('Ver mais', 'Ver menos').replace('↓', '↑');
+            } else {
+                btn.textContent = btn.textContent.replace('Ver menos', 'Ver mais').replace('↑', '↓');
+            }
+        }
+    </script>
 </body>
 </html>
