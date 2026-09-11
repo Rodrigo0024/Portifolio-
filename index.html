@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[INSIRA O NOME] | Engenheiro Eletricista & Projetista Eletrônico</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .card .period {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style-type: none;
+            color: var(--text-muted);
+        }
+
+        ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "▪ ";
+            color: var(--accent);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>[INSIRA O NOME]</h1>
+            <p class="tagline">Engenheiro Eletricista | Pós-graduado em Eng. Automotiva | Projetista Eletrônico & P&D</p>
+            <p class="location">📍 [INSIRA A LOCALIDADE]</p>
+        </header>
+
+        <!-- Sobre Mim -->
+        <section>
+            <h2>Sobre</h2>
+            <p>
+                Profissional com mais de uma década de experiência técnica unindo a vivência prática em sistemas mecânicos e eletrônicos veiculares ao desenvolvimento avançado de hardware e software embarcado. Trajetória iniciada cedo na manutenção automotiva e consolidação em engenharia elétrica e P&D.
+            </p>
+        </section>
+
+        <!-- Experiência Profissional -->
+        <section>
+            <h2>Experiência</h2>
+
+            <div class="card">
+                <h3>Projetista Eletrônico</h3>
+                <span class="period">[INSIRA A EMPRESA] | Atual</span>
+                <p>Atuação em P&D com foco em desenvolvimento de software embarcado em linguagem C para microcontroladores, elaboração de diagramas eletrônicos (circuitos analógicos e digitais) e criação de layout de PCBs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Estágio em Eletrônica</h3>
+                <span class="period">[INSIRA A EMPRESA]</span>
+                <p>Responsável pela montagem e testes de protótipos eletrônicos. Familiarização com ferramentas de programação e projeto como STM32CubeIDE, STVisual Develop, STM32CubeProgramer e KiCad.</p>
+            </div>
+
+            <div class="card">
+                <h3>Trajetória Técnica e Diagnóstico Automotivo</h3>
+                <span class="period">Desde 2010</span>
+                <p>Início na mecânica aos 15 anos pela instituição de ensino técnica. Participação destacada em olimpíadas do conhecimento na modalidade de mecânica de automóveis. Ampla bagagem em diagnóstico avançado (ABS, injeção eletrônica, sistemas de carga/partida, transmissão e redes).</p>
+            </div>
+        </section>
+
+        <!-- Principais Projetos -->
+        <section>
+            <h2>Principais Projetos</h2>
+
+            <div class="card">
+                <h3>Nome do Projeto 1</h3>
+                <span class="period">Tecnologias: C, STM32, KiCad</span>
+                <p>Breve descrição do projeto desenvolvido (ex: sistema embarcado de controle, placa de circuito impresso customizada, automação ou dispositivo eletrônico).</p>
+                <div class="contact-links" style="margin-top: 1rem;">
+                    <a href="#" target="_blank" class="btn">Ver Código / Repositório</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Nome do Projeto 2</h3>
+                <span class="period">Tecnologias: Altium Designer, Firmware</span>
+                <p>Breve descrição do segundo projeto de destaque, focando na aplicação prática de hardware ou software desenvolvida por você.</p>
+                <div class="contact-links" style="margin-top: 1rem;">
+                    <a href="#" target="_blank" class="btn">Ver Código / Repositório</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competências -->
+        <section>
+            <h2>Competências</h2>
+            <div class="skills-grid">
+                <div class="card skill-category">
+                    <h3>Conhecimento do setor</h3>
+                    <ul>
+                        <li>Engenharia</li>
+                        <li>Engenharia Elétrica</li>
+                        <li>Engenharia Automotiva</li>
+                        <li>Engenharia de Projetos</li>
+                        <li>Desenvolvimento Organizacional</li>
+                        <li>Conserto Automotivo</li>
+                        <li>Mecânica</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3>Ferramentas e tecnologias</h3>
+                    <ul>
+                        <li>Firmware</li>
+                        <li>Microcontroladores</li>
+                        <li>STM32</li>
+                        <li>C (Linguagem de Programação)</li>
+                        <li>Desenvolvimento de Software</li>
+                        <li>Depuração</li>
+                    </ul>
+                </div>
+                <div class="card skill-category">
+                    <h3>Competências interpessoais</h3>
+                    <ul>
+                        <li>Trabalho em equipe</li>
+                        <li>Competidor em Olimpíada do Conhecimento</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <div class="card">
+                <h3>Pós-graduação em Engenharia Automotiva</h3>
+                <span class="period">[INSIRA A INSTITUIÇÃO] (Concluído)</span>
+            </div>
+            <div class="card">
+                <h3>Graduação em Engenharia Elétrica</h3>
+                <span class="period">[INSIRA A INSTITUIÇÃO]</span>
+            </div>
+        </section>
+
+        <!-- Licenças e Certificados -->
+        <section>
+            <h2>Licenças e Certificados</h2>
+
+            <div class="card">
+                <h3>Curso STM32 Método HAL (Hardware Abstraction Layer)</h3>
+                <span class="period">WRKits | Emitida em jun de 2025</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso STM32 Método Baremetal</h3>
+                <span class="period">WRKits | Emitida em jan de 2025</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso Projeto de PCB com Altium Designer</h3>
+                <span class="period">Udemy | Emitida em jul de 2025</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso Projeto de PCB com KiCad 8</h3>
+                <span class="period">Udemy | Emitida em set de 2024</span>
+            </div>
+
+            <div class="card">
+                <h3>Competidor - Olimpíada do Conhecimento</h3>
+                <span class="period">Instituição de Ensino Técnica | Emitida em set de 2013</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso Mecânico de Injeção Eletrônica</h3>
+                <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2012</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso Mecânico Automobilístico</h3>
+                <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2011</span>
+            </div>
+
+            <div class="card">
+                <h3>Curso Operador de Computador</h3>
+                <span class="period">[INSIRA A EMPRESA] | Emitida em ago de 2010</span>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section>
+            <h2>Contato</h2>
+            <p>Interessado em trocar ideias sobre engenharia, sistemas embarcados ou tecnologia? Entre em contato:</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
+                <a href="mailto:contato@email.com" class="btn">E-mail</a>
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Desenvolvido com foco em simplicidade e leveza.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
