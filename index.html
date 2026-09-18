@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[INSIRA O NOME] | Engenheiro Eletricista & Projetista Eletrônico</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;       /* Fundo dark profundo e moderno */
+            --card-bg: #131c2e;        /* Fundo dos cards ligeiramente mais claro */
+            --text-main: #f1f5f9;      /* Texto principal claro */
+            --text-muted: #94a3b8;     /* Texto secundário acinzentado */
+            --accent: #3b82f6;         /* Azul de suporte */
+            --highlight: #fb923c;      /* Laranja/Coral vibrante para destaque */
+            --border: #1e293b;         /* Bordas sutis */
+            --code-bg: #070a10;        /* Fundo bem escuro */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Navbar Lateral */
+        nav.sidebar {
+            width: 260px;
+            background-color: rgba(13, 19, 32, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .sidebar-header .nav-logo {
+            color: var(--text-main);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.15rem;
+            display: block;
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-header .nav-logo span {
+            color: var(--highlight);
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex-grow: 1;
+        }
+
+        .nav-links li::before {
+            content: none !important;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background-color: var(--border);
+            padding-left: 1.2rem;
+        }
+
+        .sidebar-footer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            margin-left: 260px;
+            flex-grow: 1;
+            padding: 3rem 4rem;
+            max-width: 1050px;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-container {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--highlight);
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .header-content {
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .tagline {
+            color: var(--highlight);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .location {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            nav.sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 1.5rem;
+            }
+            .sidebar-header .nav-logo {
+                margin-bottom: 1.5rem;
+            }
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 2rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid var(--highlight);
+            padding-left: 0.75rem;
+            color: var(--text-main);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
+        }
+
+        .card .period {
+            font-size: 0.85rem;
+            color: var(--highlight);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        ul {
+            list-style-type: none;
+            color: var(--text-muted);
+        }
+
+        ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: "▪ ";
+            color: var(--highlight);
+        }
+
+        .hidden-items {
+            display: none;
+        }
+
+        .hidden-items.show {
+            display: block;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--highlight);
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--highlight);
+            border: 1px solid var(--highlight);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--highlight);
+            color: var(--bg-color);
+        }
+
+        footer {
+            text-align: left;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Lateral -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="nav-logo">
+                Portfólio
+                <span> Engenharia & P&D</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#competencias">Competências</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#certificados">Certificados</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <p>Sistemas Embarcados & Hardware</p>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Cabeçalho -->
+            <header>
+                <div class="profile-container">
+                    <img src="perfil.png" alt="Foto de Perfil" class="profile-pic">
+                </div>
+                <div class="header-content">
+                    <h1>[INSIRA O NOME]</h1>
+                    <p class="tagline">Engenheiro Eletricista | Pós-graduado em Eng. Automotiva | Projetista Eletrônico & P&D</p>
+                    <p class="location">📍 [INSIRA A LOCALIDADE]</p>
+                </div>
+            </header>
+
+            <!-- Sobre Mim -->
+            <section id="sobre">
+                <h2>Sobre</h2>
+                <p>
+                    Profissional com mais de uma década de experiência técnica unindo a vivência prática em sistemas mecânicos e eletrônicos veiculares ao desenvolvimento avançado de hardware e software embarcado. Trajetória iniciada cedo na manutenção automotiva e consolidação em engenharia elétrica e P&D.
+                </p>
+            </section>
+
+            <!-- Experiência Profissional -->
+            <section id="experiencia">
+                <h2>Experiência</h2>
+
+                <div class="card">
+                    <h3>Projetista Eletrônico</h3>
+                    <span class="period">[INSIRA A EMPRESA] | Atual</span>
+                    <p>Atuação em P&D com foco em desenvolvimento de software embarcado em linguagem C para microcontroladores, elaboração de diagramas eletrônicos (circuitos analógicos e digitais) e criação de layout de PCBs.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Estágio em Eletrônica</h3>
+                    <span class="period">[INSIRA A EMPRESA]</span>
+                    <p>Responsável pela montagem e testes de protótipos eletrônicos. Familiarização com ferramentas de programação e projeto como STM32CubeIDE, STVisual Develop, STM32CubeProgramer e KiCad.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Trajetória Técnica e Diagnóstico Automotivo</h3>
+                    <span class="period">Desde 2010</span>
+                    <p>Início na mecânica aos 15 anos pela instituição de ensino técnica. Participação destacada em olimpíadas do conhecimento na modalidade de mecânica de automóveis. Ampla bagagem em diagnóstico avançado (ABS, injeção eletrônica, sistemas de carga/partida, transmissão e redes).</p>
+                </div>
+            </section>
+
+            <!-- Principais Projetos -->
+            <section id="projetos">
+                <h2>Principais Projetos</h2>
+
+                <div class="card">
+                    <h3>Nome do Projeto 1</h3>
+                    <span class="period">Tecnologias: C, STM32, KiCad</span>
+                    <p>Breve descrição do projeto desenvolvido (ex: sistema embarcado de controle, placa de circuito impresso customizada, automação ou dispositivo eletrônico).</p>
+                    <div class="contact-links" style="margin-top: 1rem;">
+                        <a href="projeto1.html" class="btn">Ver Detalhes do Projeto</a>
+                    </div>
+                </div>
+
+                <div id="proj-mais" class="hidden-items">
+                    <div class="card">
+                        <h3>Nome do Projeto 2</h3>
+                        <span class="period">Tecnologias: Altium Designer, Firmware</span>
+                        <p>Breve descrição do segundo projeto de destaque, focando na aplicação prática de hardware ou software desenvolvida por você.</p>
+                        <div class="contact-links" style="margin-top: 1rem;">
+                            <a href="#" target="_blank" class="btn">Ver Código / Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleSection('proj-mais', this)">Ver mais projetos ↓</button>
+            </section>
+
+            <!-- Competências -->
+            <section id="competencias">
+                <h2>Competências</h2>
+                <div class="skills-grid">
+                    <div class="card skill-category">
+                        <h3>Conhecimento do setor</h3>
+                        <ul>
+                            <li>Engenharia</li>
+                            <li>Engenharia Elétrica</li>
+                            <li>Engenharia Automotiva</li>
+                        </ul>
+                        <ul id="skill-setor-mais" class="hidden-items" style="margin-top: 0.3rem;">
+                            <li>Engenharia de Projetos</li>
+                            <li>Desenvolvimento Organizacional</li>
+                            <li>Conserto Automotivo</li>
+                            <li>Mecânica</li>
+                        </ul>
+                        <button class="toggle-btn" onclick="toggleSection('skill-setor-mais', this)">Ver mais ↓</button>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3>Ferramentas e tecnologias</h3>
+                        <ul>
+                            <li>Firmware</li>
+                            <li>Microcontroladores</li>
+                            <li>STM32</li>
+                        </ul>
+                        <ul id="skill-tech-mais" class="hidden-items" style="margin-top: 0.3rem;">
+                            <li>C (Linguagem de Programação)</li>
+                            <li>Desenvolvimento de Software</li>
+                            <li>Depuração</li>
+                        </ul>
+                        <button class="toggle-btn" onclick="toggleSection('skill-tech-mais', this)">Ver mais ↓</button>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3>Competências interpessoais</h3>
+                        <ul>
+                            <li>Trabalho em equipe</li>
+                            <li>Competidor em Olimpíada do Conhecimento</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formação -->
+            <section id="formacao">
+                <h2>Formação Acadêmica</h2>
+                <div class="card">
+                    <h3>Pós-graduação em Engenharia Automotiva</h3>
+                    <span class="period">[INSIRA A INSTITUIÇÃO] (Concluído)</span>
+                </div>
+                
+                <div id="form-mais" class="hidden-items">
+                    <div class="card">
+                        <h3>Graduação em Engenharia Elétrica</h3>
+                        <span class="period">[INSIRA A INSTITUIÇÃO]</span>
+                    </div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleSection('form-mais', this)">Ver mais formações ↓</button>
+            </section>
+
+            <!-- Licenças e Certificados -->
+            <section id="certificados">
+                <h2>Licenças e Certificados</h2>
+
+                <div class="card">
+                    <h3>Curso STM32 Método HAL (Hardware Abstraction Layer)</h3>
+                    <span class="period">WRKits | Emitida em jun de 2025</span>
+                </div>
+
+                <div class="card">
+                    <h3>Curso STM32 Método Baremetal</h3>
+                    <span class="period">WRKits | Emitida em jan de 2025</span>
+                </div>
+
+                <div id="cert-mais" class="hidden-items">
+                    <div class="card">
+                        <h3>Curso Projeto de PCB com Altium Designer</h3>
+                        <span class="period">Udemy | Emitida em jul de 2025</span>
+                    </div>
+
+                    <div class="card">
+                        <h3>Curso Projeto de PCB com KiCad 8</h3>
+                        <span class="period">Udemy | Emitida em set de 2024</span>
+                    </div>
+
+                    <div class="card">
+                        <h3>Competidor - Olimpíada do Conhecimento</h3>
+                        <span class="period">Instituição de Ensino Técnica | Emitida em set de 2013</span>
+                    </div>
+
+                    <div class="card">
+                        <h3>Curso Mecânico de Injeção Eletrônica</h3>
+                        <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2012</span>
+                    </div>
+
+                    <div class="card">
+                        <h3>Curso Mecânico Automobilístico</h3>
+                        <span class="period">Instituição de Ensino Técnica | Emitida em dez de 2011</span>
+                    </div>
+
+                    <div class="card">
+                        <h3>Curso Operador de Computador</h3>
+                        <span class="period">[INSIRA A EMPRESA] | Emitida em ago de 2010</span>
+                    </div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleSection('cert-mais', this)">Ver mais certificados ↓</button>
+            </section>
+
+            <!-- Contato -->
+            <section id="contato">
+                <h2>Contato</h2>
+                <p>Interessado em trocar ideias sobre engenharia, sistemas embarcados ou tecnologia? Entre em contato:</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com" target="_blank" class="btn">LinkedIn</a>
+                    <a href="mailto:contato@email.com" class="btn">E-mail</a>
+                </div>
+            </section>
+
+            <!-- Rodapé -->
+            <footer>
+                <p>Desenvolvido com foco em engenharia e sistemas embarcados.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script>
+        function toggleSection(id, btn) {
+            const element = document.getElementById(id);
+            element.classList.toggle('show');
+            
+            if (element.classList.contains('show')) {
+                btn.textContent = btn.textContent.replace('Ver mais', 'Ver menos').replace('↓', '↑');
+            } else {
+                btn.textContent = btn.textContent.replace('Ver menos', 'Ver mais').replace('↑', '↓');
+            }
+        }
+    </script>
+</body>
+</html>
