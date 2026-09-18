@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartGate - Sistema Embarcado IoT | [INSIRA O NOME]</title>
+    <title>Algoritmos de Ordenação para Treinar Lógica | Portfólio</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
+            --bg-color: #0b0f19;       /* Fundo dark profundo e moderno */
+            --card-bg: #131c2e;        /* Fundo dos cards ligeiramente mais claro */
+            --text-main: #f1f5f9;      /* Texto principal claro */
+            --text-muted: #94a3b8;     /* Texto secundário acinzentado */
+            --accent: #3b82f6;         /* Azul de suporte */
+            --highlight: #fb923c;      /* Laranja/Coral vibrante para destaque */
+            --border: #1e293b;         /* Bordas sutis */
+            --code-bg: #070a10;        /* Fundo bem escuro para blocos de código */
         }
 
         * {
@@ -25,17 +27,95 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Navbar Lateral */
+        nav.sidebar {
+            width: 260px;
+            background-color: rgba(13, 19, 32, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid var(--border);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .sidebar-header .nav-logo {
+            color: var(--text-main);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.15rem;
+            display: block;
+            margin-bottom: 2.5rem;
+        }
+
+        .sidebar-header .nav-logo span {
+            color: var(--highlight);
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex-grow: 1;
+        }
+
+        .nav-links li::before {
+            content: none !important;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+            background-color: var(--border);
+            padding-left: 1.2rem;
+        }
+
+        .sidebar-footer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        /* Conteúdo Principal (Afastado para dar espaço à sidebar) */
+        .main-content {
+            margin-left: 260px;
+            flex-grow: 1;
+            padding: 3rem 4rem;
+            max-width: 1050px;
         }
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
         }
 
         .back-link {
             display: inline-block;
-            color: var(--accent);
+            color: var(--highlight);
             text-decoration: none;
             margin-bottom: 2rem;
             font-weight: 500;
@@ -58,23 +138,26 @@
             font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            color: var(--text-main);
         }
 
         .tagline {
-            color: var(--accent);
+            color: var(--highlight);
             font-size: 1.1rem;
             font-weight: 500;
         }
 
         section {
             margin-bottom: 2.5rem;
+            scroll-margin-top: 2rem;
         }
 
         h2 {
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
-            border-left: 3px solid var(--accent);
+            border-left: 3px solid var(--highlight);
             padding-left: 0.75rem;
+            color: var(--text-main);
         }
 
         p {
@@ -88,6 +171,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
         }
 
         ul {
@@ -103,29 +187,20 @@
 
         ul li::before {
             content: "▪ ";
-            color: var(--accent);
+            color: var(--highlight);
         }
 
-        /* Responsividade para o Vídeo do YouTube */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
+        pre {
+            background-color: var(--code-bg);
             border: 1px solid var(--border);
-            background-color: var(--card-bg);
-            margin-top: 1rem;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            color: #e2e8f0;
+            font-family: Consolas, Monaco, monospace;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .contact-links {
@@ -137,8 +212,8 @@
         .btn {
             display: inline-block;
             background-color: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
+            color: var(--highlight);
+            border: 1px solid var(--highlight);
             padding: 0.6rem 1.2rem;
             border-radius: 6px;
             text-decoration: none;
@@ -148,76 +223,145 @@
         }
 
         .btn:hover {
-            background-color: var(--accent);
+            background-color: var(--highlight);
             color: var(--bg-color);
         }
 
         footer {
-            text-align: center;
+            text-align: left;
             margin-top: 4rem;
             color: var(--text-muted);
             font-size: 0.85rem;
             border-top: 1px solid var(--border);
             padding-top: 1.5rem;
+            padding-bottom: 2rem;
+        }
+
+        /* Responsividade para Dispositivos Móveis */
+        @media (max-width: 900px) {
+            body {
+                flex-direction: column;
+            }
+            nav.sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 1.5rem;
+            }
+            .sidebar-header .nav-logo {
+                margin-bottom: 1.5rem;
+            }
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                padding: 0.4rem 0.8rem;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <a href="index.html" class="back-link">← Voltar para o Portfólio</a>
+    <!-- Navbar Lateral -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="nav-logo">
+                Portfólio
+                <span> Algoritmos</span>
+            </a>
+            <ul class="nav-links">
+                <a href="index.html" class="back-link">Página inicial</a>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#algoritmos">Algoritmos</a></li>
+                <li><a href="#executar">Como Executar</a></li>
+                <li><a href="#codigo">Repositório</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <p>Foco em Estruturas de Dados & Lógica</p>
+        </div>
+    </nav>
 
-        <header>
-            <h1>SmartGate: Sistema Embarcado IoT</h1>
-            <p class="tagline">Controle de Accesso Inteligente com STM32 e Firmware em C (Baremetal/HAL)</p>
-        </header>
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="container">
+            
 
-        <!-- Visão Geral -->
-        <section>
-            <h2>Sobre o Projeto</h2>
-            <p>
-                O <strong>SmartGate</strong> é um projeto de hardware e software embarcado desenvolvido para gerenciar o controle de acesso automatizado de portões e catracas industriais ou residenciais. O sistema integra leitura de cartões RFID, autenticação biométrica local e conectividade sem fio para monitoramento remoto em tempo real.
-            </p>
-            <p>
-                Todo o projeto de circuito impresso (PCB) foi desenhado focando em alta imunidade a ruídos elétricos comuns em ambientes industriais, utilizando microcontroladores baseados na arquitetura ARM Cortex-M.
-            </p>
-        </section>
+            <header>
+                <h1>Algoritmos de Ordenação para Treinar Lógica</h1>
+                <p class="tagline">Estudos de Estruturas de Dados e Algoritmos em Python com Interface Interativa</p>
+            </header>
 
-        <!-- Vídeo Demonstrativo -->
-        <section>
-            <h2>Demonstração em Vídeo</h2>
-            <p>Assista abaixo ao funcionamento do protótipo em bancada testando o acionamento do motor de passo e a leitura de tags</p>
-            <div class="video-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/gfFqxuD1d5Q?si=EUpifkhiqccxFsVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </section>
+            <!-- Visão Geral -->
+            <section id="sobre">
+                <h2>Sobre o Projeto</h2>
+                <p>
+                    Repositório dedicado aos estudos de estruturas de dados e algoritmos em Python, focado no aprimoramento da lógica de programação e na implementação prática dos conceitos fundamentais de ordenação.
+                </p>
+                <p>
+                    O projeto conta com uma interface web interativa desenvolvida em Streamlit para testar e visualizar o comportamento dos algoritmos de forma dinâmica.
+                </p>
+            </section>
 
-        <!-- Tecnologias e Funcionalidades -->
-        <section>
-            <h2>Principais Características</h2>
-            <div class="card">
-                <ul>
-                    <li>Firmware desenvolvido nativamente em Linguagem C utilizando bibliotecas HAL e rotinas otimizadas em Baremetal.</li>
-                    <li>Placa de circuito impresso (PCB) desenvolvida no KiCad com isolamento galvânico nas entradas de relé.</li>
-                    <li>Gerenciamento de filas e interrupções de hardware para leitura de teclado matricial e display OLED I2C.</li>
-                    <li>Watchdog Timer (WDT) configurado para resgate automático de falhas em caso de travamento do sistema.</li>
-                </ul>
-            </div>
-        </section>
+            <!-- Principais Características / Progressos -->
+            <section id="algoritmos">
+                <h2>Progressos e Algoritmos</h2>
+                <div class="card">
+                    <p>Acompanhamento dos algoritmos implementados e funcionalidades integradas no projeto:</p>
+                    <ul>
+                        <li><strong>Merge Sort:</strong> Implementado com recursão e função merge própria.</li>
+                        <li><strong>Quick Sort:</strong> Implementação eficiente baseada em partição.</li>
+                        <li><strong>Bubble Sort:</strong> Abordagem clássica baseada em trocas sucessivas.</li>
+                        <li><strong>Insertion Sort:</strong> Inserção ordenada eficiente para conjuntos menores.</li>
+                        <li><strong>Selection Sort:</strong> Seleção iterativa do menor elemento.</li>
+                        <li><strong>Interface Web com Streamlit:</strong> Painel interativo para testar e validar os algoritmos.</li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- Links e Repositório -->
-        <section>
-            <h2>Código e Documentação</h2>
-            <p>O código-fonte completo, diagramas esquemáticos e arquivos Gerber da placa estão disponíveis no repositório oficial:</p>
-            <div class="contact-links">
-                <a href="https://github.com" target="_blank" class="btn">Acessar Repositório no GitHub</a>
-            </div>
-        </section>
+            <!-- Como Executar -->
+            <section id="executar">
+                <h2>Como Executar</h2>
+                <p>Certifique-se de ter o Python instalado na sua máquina. Siga os passos abaixo para configurar o ambiente e rodar o projeto:</p>
+                
+                <div class="card">
+                    <p><strong>1. Criar e ativar o ambiente virtual (venv)</strong></p>
+                    <p>Abra o terminal na pasta do projeto e execute:</p>
+                    <p><em>No Linux / macOS:</em></p>
+                    <pre>python3 -m venv venv
+source venv/bin/activate</pre>
+                    <p><em>No Windows (PowerShell):</em></p>
+                    <pre>python -m venv venv
+.\venv\Scripts\Activate</pre>
 
-        <footer>
-            <p></p>
-        </footer>
-    </div>
+                    <p><strong>2. Instalar os requisitos</strong></p>
+                    <pre>pip install -r requirements.txt</pre>
+
+                    <p><strong>3. Rodando o app</strong></p>
+                    <pre>streamlit run app.py</pre>
+                </div>
+            </section>
+
+            <!-- Links e Repositório -->
+            <section id="codigo">
+                <h2>Código e Documentação</h2>
+                <p>O código-fonte completo e a documentação do projeto estão disponíveis no repositório oficial:</p>
+                <div class="contact-links">
+                    <a href="https://github.com" target="_blank" class="btn">Acessar Repositório no GitHub</a>
+                </div>
+            </section>
+
+            <footer>
+                <p>Desenvolvido com foco em lógica de programação e estruturas de dados.</p>
+            </footer>
+        </div>
+    </main>
 
 </body>
 </html>
